@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Esqi ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #ff758c, #ff7eb3, #ffb6c1, #ffd1dc);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 90%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 8px 35px rgba(0,0,0,0.2);
+      animation: fadeInUp 1.8s ease;
+      color: white;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .title {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    .name {
+      font-size: 2rem;
+      color: #fff0f5;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .cake {
+      font-size: 4rem;
+      animation: bounce 2s infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .typing {
+      min-height: 120px;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-top: 15px;
+      color: #ffffff;
+      white-space: pre-line;
+      padding: 0 10px;
+    }
+
+    .heart-beat {
+      font-size: 2.5rem;
+      margin: 18px 0;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .love-btn {
+      background: #ff4d88;
+      color: white;
+    }
+
+    .love-btn:hover {
+      transform: scale(1.08);
+      background: #e63973;
+    }
+
+    .music-btn {
+      background: white;
+      color: #ff4d88;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.08);
+      background: #ffe4ee;
+    }
+
+    .secret-message {
+      margin-top: 20px;
+      font-size: 1.05rem;
+      color: #fff;
+      opacity: 0;
+      transition: 0.6s;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .secret-message.show {
+      opacity: 1;
+      max-height: 300px;
+      margin-top: 20px;
+    }
+
+    .floating-heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255,255,255,0.7);
+      animation: floatUp linear forwards;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    .glow {
+      text-shadow: 0 0 8px rgba(255,255,255,0.6),
+                   0 0 16px rgba(255,192,203,0.6);
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.9rem;
+      }
+
+      .name {
+        font-size: 1.6rem;
+      }
+
+      .typing {
+        font-size: 1rem;
+      }
+
+      .cake {
+        font-size: 3.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="cake">🎂</div>
+    <div class="title glow">Selamat Ulang Tahun</div>
+    <div class="name glow">Esqi ❤️</div>
+    <div class="heart-beat">💖</div>
+
+    <div class="typing" id="typingText"></div>
+
+    <div class="buttons">
+      <button class="love-btn" onclick="showLoveMessage()">💌 Pesan Cinta</button>
+      <button class="music-btn" onclick="toggleMusic()">🎵 Putar Musik</button>
+    </div>
+
+    <div class="secret-message" id="secretMessage">
+      Sayangku Esqi 💕  
+      Di hari spesialmu ini, aku cuma mau kamu tahu...  
+      kamu adalah alasan kenapa hatiku selalu nyaman.  
+      Semoga semua impianmu tercapai, langkahmu dimudahkan,  
+      dan cintaku selalu jadi tempat ternyaman buat kamu.  
+      Aku sayang kamu, hari ini, besok, dan selamanya ❤️
+    </div>
+  </div>
+
+  <!-- Ganti link audio ini kalau mau pakai lagu sendiri -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    const message = `Happy Birthday, Esqi 💖
+
+Di hari spesial ini, aku mau ngucapin terima kasih...
+karena kamu sudah hadir di hidupku dan membuat semuanya terasa lebih indah.
+
+Semoga kamu selalu sehat, bahagia, dimudahkan semua urusanmu,
+dan semua impian yang kamu simpan bisa tercapai satu per satu.
+
+Aku bangga punya kamu.
+Aku bersyukur bisa kenal kamu.
+Dan aku berharap, di setiap ulang tahunmu,
+aku masih jadi orang yang bisa nemenin kamu.
+
+I love you so much, Esqi ❤️`;
+
+    let i = 0;
+    const speed = 45;
+    const typingText = document.getElementById("typingText");
+
+    function typeWriter() {
+      if (i < message.length) {
+        typingText.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+
+    function showLoveMessage() {
+      const msg = document.getElementById("secretMessage");
+      msg.classList.toggle("show");
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bgMusic");
+      if (music.paused) {
+        music.play();
+        alert("🎵 Musik romantis diputar untuk Esqi 💖");
+      } else {
+        music.pause();
+        alert("⏸️ Musik dihentikan dulu yaa 💕");
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.innerHTML = ["💖","💗","💕","💘","💝"][Math.floor(Math.random() * 5)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 18) + "px";
+      heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 350);
+  </script>
+
+</body>
+</html>
